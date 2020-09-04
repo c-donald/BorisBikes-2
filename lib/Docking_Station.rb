@@ -1,7 +1,7 @@
 class DockingStation
   attr_reader :bike
   
-  def initialize(capacity = 1)
+  def initialize(capacity = 20)
     @capacity = capacity
     @docked_bikes = [] 
   end
