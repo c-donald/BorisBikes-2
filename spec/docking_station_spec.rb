@@ -8,6 +8,11 @@ describe DockingStation do
      expect(bike).to respond_to :working?
    end
 
+   it 'raise an error if docking station empty' do 
+  expect{ subject.release_bike }.to raise_error(RuntimeError)
+  end
+
+
    it 'docks bikes' do
      bike = Bike.new
      expect(subject.dock(bike)).to eq bike

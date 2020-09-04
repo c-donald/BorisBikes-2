@@ -1,20 +1,24 @@
 class DockingStation
-
-    def release_bike
-      Bike.new
+  attr_reader :bike
+  
+  def initialize
+    @bike = [] 
+  end
+  
+  def release_bike
+      raise 'docking station empty' if @bike.empty?
+      @bike
     end
 
     def dock(bike)
       @bike = bike
     end
 
-    attr_reader :bike
-
 end
 
 
 class Bike
   def working?
-    return true
+     true
   end
 end
